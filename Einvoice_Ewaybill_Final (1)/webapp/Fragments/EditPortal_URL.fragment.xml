@@ -1,0 +1,55 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" id="inputdialog">
+	<Dialog showHeader="false">
+		<Panel>
+			<headerToolbar>
+				<OverflowToolbar height="3rem" class="Panel_header">
+					<Title text="Edit Portal URL" class="labelselectrep"/>
+					<ToolbarSpacer/>
+					<Button icon="sap-icon://decline" press="onCancel1"></Button>
+				</OverflowToolbar>
+			</headerToolbar>
+			<f:SimpleForm id="SimpleFormDisplay35432" editable="true" layout="ResponsiveGridLayout" title="" labelSpanXL="3" labelSpanL="3"
+				labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+				columnsL="1" columnsM="1" singleContainerFullSize="false">
+				<f:content>
+					<Label text="SAP System ID"/>
+					<Input id="sapsystemid1" editable="false"/>
+					<Label text="Mode of Process"/>
+					<Select id="moprodessporturl1" editable="false">
+						<core:Item text="EINV" key="EINV"/>
+						<core:Item text="EBILL" key="EBILL"/>
+						<core:Item text="GST" key="GST"/>
+					</Select>
+					<Label text="Function"/>
+					<Input id="function1" editable="false"/>
+					<Label text="Portal URL1"/>
+					<Input id="url11"/>
+					<Label text="Portal URL2"/>
+					<Input id="url21"/>
+					<Label text="Portal URL3"/>
+					<Input id="url31"/>
+					<Label text="Portal URL4"/>
+					<Input id="url41"/>
+					<Label text="Portal URL5"/>
+					<Input id="url51"/>
+					<Label text="Portal URL6"/>
+					<Input id="url61"/>
+					<Label text="Portal URL7"/>
+					<Input id="url71"/>
+					<Label text="Portal URL8"/>
+					<Input id="url81"/>
+					<Label text="Portal URL9"/>
+					<Input id="url91"/>
+					<Label text="Portal URL10"/>
+					<Input id="url101"/>
+					<Label text="Active/Deactive"/>
+					<CheckBox id="activedeactive1"></CheckBox>
+				</f:content>
+			</f:SimpleForm>
+		</Panel>
+		<buttons>
+			<Button text="Update" class="btn btn-success Sub" type="Emphasized" press="oncreate1"/>
+			<Button text="Clear" class="btn btn-success Sub" type="Emphasized" press="onclear1"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

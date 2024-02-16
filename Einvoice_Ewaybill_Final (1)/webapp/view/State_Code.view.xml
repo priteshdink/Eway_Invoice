@@ -1,0 +1,55 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:u="sap.ui.unified" xmlns:m="sap.m"
+	controllerName="com.dink.Einvoice.controller.State_Code" xmlns:html="http://www.w3.org/1999/xhtml">
+	<m:Page showNavButton="true" navButtonPress="onBack" backgroundDesign="Transparent" class="pagebackcolor">
+		<m:content>
+			<m:Panel>
+				<Table id="state_codetable" selectionMode="None" rows="{/StateCodeSet}" visibleRowCount="7" filter="filterPrice">
+					<extension>
+						<m:OverflowToolbar>
+							<m:Title id="title" text="State Code"/>
+							<m:ToolbarSpacer/>
+							<m:Button type="Emphasized" text="Add" press="onAdd"/>
+							<!--	<m:Button type="Emphasized" text="Edit" press="onEdit"/>-->
+						</m:OverflowToolbar>
+					</extension>
+					<columns>
+						<Column filterProperty="Category" defaultFilterOperator="StartsWith" width="16rem">
+							<m:Label text="Country"/>
+							<template>
+								<m:Text text="{Land1}"/>
+							</template>
+						</Column>
+						<Column width="16rem">
+							<m:Label text="SAP Region"/>
+							<template>
+								<m:Text text="{Regio}"/>
+							</template>
+						</Column>
+						<Column id="availability" filterProperty="Available" showFilterMenuEntry="false" defaultFilterOperator="EQ"
+							filterType="sap.ui.model.type.Boolean" width="16rem">
+							<m:Label text="Govt. Region"/>
+							<template>
+								<m:Text text="{Stcd}"/>
+							</template>
+						</Column>
+						<Column width="17rem">
+							<m:Label text="Active/Deactive"/>
+							<template>
+								<m:CheckBox selected="{= ${Actflag} === 'X'}" editable="false" select="onchange"></m:CheckBox>
+							</template>
+						</Column>
+						<Column width="17rem">
+							<m:Label text="Edit/Delete"/>
+							<template>
+								<m:HBox>
+									<m:Button icon="sap-icon://edit" type="Transparent" press="onEdit"/>
+									<m:Button icon="sap-icon://delete" type="Transparent" press="deletestatecode"/>
+								</m:HBox>
+							</template>
+						</Column>
+					</columns>
+				</Table>
+			</m:Panel>
+		</m:content>
+	</m:Page>
+</mvc:View>

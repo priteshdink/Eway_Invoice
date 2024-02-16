@@ -1,0 +1,37 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" id="inputdialog">
+	<Dialog showHeader="false">
+		<Panel>
+			<headerToolbar>
+				<OverflowToolbar height="3rem" class="Panel_header">
+					<Title text="Edit Authorization Check For E-Invoice Cockpit" class="labelselectrep"/>
+					<ToolbarSpacer/>
+					<Button icon="sap-icon://decline" press="onCancel1"></Button>
+				</OverflowToolbar>
+			</headerToolbar>
+			<f:SimpleForm editable="true" layout="ResponsiveGridLayout" title="" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
+				adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+				singleContainerFullSize="false">
+				<f:content>
+					<Label text="SAP System ID"/>
+					<Input id="sapsysidinva1" editable="false"/>
+					<Label text="SD(VF01)Flag"/>
+					<CheckBox id="sdflag1"></CheckBox>
+					<Label text="FI(Credit)Flag"/>
+					<CheckBox id="creditflag1"></CheckBox>
+					<Label text="FI(Debit)Flag"/>
+					<CheckBox id="debitflag1"></CheckBox>
+					<Label text="FI(RCM-FB60)Flag"/>
+					<CheckBox id="fifb60flag1"></CheckBox>
+					<Label text="FI(RCM-MIRO)Flag"/>
+					<CheckBox id="fimiro1"></CheckBox>
+					<Label text="Cancel Flag"/>
+					<CheckBox id="cancel1"></CheckBox>
+				</f:content>
+			</f:SimpleForm>
+		</Panel>
+		<buttons>
+			<Button text="Update" type="Emphasized" press="oncreate1"/>
+			<Button text="Clear" type="Emphasized" press="onclear1"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

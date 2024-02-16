@@ -1,0 +1,74 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:u="sap.ui.unified" xmlns:m="sap.m"
+	controllerName="com.dink.Einvoice.controller.Print_E-waybill" xmlns:html="http://www.w3.org/1999/xhtml">
+	<m:Page class="labelselectrep" showNavButton="true" title="Print E-Way Bill" navButtonPress="onNavBack">
+		<m:content>
+			<m:Panel>
+			<Table id="Print_EWaybill_Display" selectionMode="Single" rows="{Ewaybill>/DisplaySet}" filter="filterPrice" enableBusyIndicator="true">
+				<extension>
+					<m:OverflowToolbar>
+						<!--<m:Title id="title" text="Print E-Way Bill"/>-->
+						<m:ToolbarSpacer/>
+						<m:Button text="Print E-Way Bill" tooltip="Reinitialize Model" type="Emphasized" press="Print_EWAYBill_Press"/>
+					</m:OverflowToolbar>
+				</extension>
+				<columns>
+					<Column hAlign="Center" width="4rem" visible="{/Visible}">
+						<m:Label design="Bold" text="Status"/>
+						<template>
+							<m:Text text="{Ewaybill>Status}"/>
+						</template>
+					</Column>
+					<Column hAlign="Center" visible="{/Visible}">
+						<m:Label design="Bold" text="Billing Documents" wrapping="true"/>
+						<template>
+							<m:Text text="{Ewaybill>Vbeln}" id="billnoLinkpress"/>
+						</template>
+					</Column>
+					<Column hAlign="Center" visible="{/Visible}">
+						<m:Label design="Bold" text="Document Type" wrapping="true"/>
+						<template>
+							<m:Text text="{Ewaybill>Fkart}"/>
+						</template>
+					</Column>
+					<Column hAlign="Center">
+						<m:Label design="Bold" text="ODN No" wrapping="true"/>
+						<template>
+							<m:Text text="{Ewaybill>Xblnr}"/>
+						</template>
+					</Column>
+					<Column hAlign="Center">
+						<m:Label design="Bold" text="EWAYBill Number" wrapping="true"/>
+						<template>
+							<m:Text text="{Ewaybill>Ebillno}"/>
+						</template>
+					</Column>
+					<Column hAlign="Center">
+						<m:Label design="Bold" text="EWAYBill Date" wrapping="true"/>
+						<template>
+							<m:Text text="{Ewaybill>EgenDat}"/>
+						</template>
+					</Column>
+					<Column hAlign="Center">
+						<m:Label design="Bold" text="EWAYBill ValidUpto" wrapping="true"/>
+						<template>
+							<m:Text text="{Ewaybill>Vdtodate}" id="Vdtodate"/>
+						</template>
+					</Column>
+					<Column hAlign="Center">
+						<m:Label design="Bold" text="Cancel Date" wrapping="true"/>
+						<template>
+							<m:Text text="{Ewaybill>Canceldate}"/>
+						</template>
+					</Column>
+					<Column hAlign="Center">
+						<m:Label design="Bold" text="Error Log"/>
+						<template>
+							<m:Text text="{Ewaybill>Errorlog}"/>
+						</template>
+					</Column>
+				</columns>
+			</Table>
+		</m:Panel>
+		</m:content>
+	</m:Page>
+</mvc:View>

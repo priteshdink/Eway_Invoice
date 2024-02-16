@@ -1,0 +1,316 @@
+<mvc:View controllerName="com.dink.Einvoice.controller.Eway_Bill" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+	<App>
+		<pages>
+			<Page showNavButton="true" navButtonPress="onNavBack">
+				<content>
+					<VBox class="selectrep">
+						<Panel>
+							<headerToolbar>
+								<OverflowToolbar height="3rem" class="Panel_header">
+									<Title text="Input" class="Panel_title"/>
+									<ToolbarSpacer/>
+									<Button type="Emphasized" text="Execute" press="Gerate_EwaybillPage"/>
+								</OverflowToolbar>
+							</headerToolbar>
+							<VBox>
+								<l:BlockLayout>
+									<l:BlockLayoutRow>
+										<l:BlockLayoutCell>
+											<f:SimpleForm id="SimpleFormChange480_Trial" editable="true" layout="ColumnLayout">
+												<Label text="Billing Date" design="Bold" required="true"/>
+												<DatePicker id="DP1" displayFormat="dd.MM.yyyy" valueFormat="yyyy-MM-ddThh:mm:ss" change="Datechange"/>
+											</f:SimpleForm>
+										</l:BlockLayoutCell>
+										<l:BlockLayoutCell>
+											<f:SimpleForm editable="true" layout="ColumnLayout">
+												<Label text="To" design="Bold" required="true"/>
+												<DatePicker id="DP2" editable="false" displayFormat="dd.MM.yyyy" valueFormat="yyyy-MM-ddThh:mm:ss" change="Datechange"/>
+											</f:SimpleForm>
+										</l:BlockLayoutCell>
+										<l:BlockLayoutCell>
+											<f:SimpleForm editable="true" layout="ColumnLayout">
+												<Label text="Billing No" design="Bold"/>
+												<Input id="Id_billno" liveChange="livechange_biilingno" maxLength="10"/>
+											</f:SimpleForm>
+										</l:BlockLayoutCell>
+										<l:BlockLayoutCell>
+											<f:SimpleForm editable="true" layout="ColumnLayout">
+												<Label text="To" design="Bold"/>
+												<Input editable="false" id="Id_billnoTo" liveChange="livechange_ewaybillnoTo" maxLength="10"/>
+											</f:SimpleForm>
+										</l:BlockLayoutCell>
+										<l:BlockLayoutCell>
+											<f:SimpleForm editable="true" layout="ColumnLayout">
+												<Label text="E-way Bill Number" design="Bold"/>
+												<Input id="Id_ewaybillno" liveChange="livechange_ewaybillno" visible="false" maxLength="12"/>
+											</f:SimpleForm>
+										</l:BlockLayoutCell>
+										<l:BlockLayoutCell>
+											<f:SimpleForm editable="true" layout="ColumnLayout">
+												<Label text="To" design="Bold"/>
+												<Input editable="false" id="Id_ewaybillnoTo" visible="false" maxLength="12" liveChange="livechange_billnoTo"/>
+											</f:SimpleForm>
+										</l:BlockLayoutCell>
+									</l:BlockLayoutRow>
+								</l:BlockLayout>
+							</VBox>
+						</Panel>
+					</VBox>
+					<VBox width="auto" class="selectrep">
+						<VBox>
+							<RadioButtonGroup id="Rad_grp" columns="4" width="100%" select="Searchoption">
+								<buttons>
+									<RadioButton id="RB1-1" text="Generate E-Way Bill" class="labelfont"/>
+									<RadioButton id="RB1-2" text="Cancel E-Way Bill" class="labelfont"/>
+									<RadioButton id="RB1-3" text="Display E-Way Bill" class="labelfont"/>
+									<RadioButton id="RB1-4" text="Print E-Way Bill" class="labelfont"/>
+								</buttons>
+							</RadioButtonGroup>
+						</VBox>
+					</VBox>
+					<VBox id="Panel" class="selectrep">
+						<Panel class="panelcontent">
+							<l:BlockLayout>
+								<l:BlockLayoutRow>
+									<l:BlockLayoutCell>
+										<f:SimpleForm id="SimpleFormChange480_Trial1" editable="true" layout="ColumnLayout">
+											<f:content>
+												<Label text="Supply Type" design="Bold"/>
+												<Select id="Supply_Type_Id">
+													<core:Item text="" key="E"/>
+													<core:Item text="Inward" key="I"/>
+													<core:Item text="Outward" key="O"/>
+												</Select>
+												<Label text="Sub suply Type" design="Bold"/>
+												<Select id="Sub_Supply_Type_Id">
+													<core:Item text="" key="E"/>
+													<core:Item text="Supply" key="1"/>
+													<core:Item text="Import" key="2"/>
+													<core:Item text="Export" key="3"/>
+													<core:Item text="Job Work" key="4"/>
+													<core:Item text="For Own Use" key="5"/>
+													<core:Item text="Job Work Returns" key="6"/>
+													<core:Item text="Sales Return" key="7"/>
+													<core:Item text="Others" key="8"/>
+													<core:Item text="SKD/CKD/Lots" key="9"/>
+													<core:Item text="Line Sales" key="10"/>
+													<core:Item text="Recipient Not Known" key="11"/>
+													<core:Item text="Exhibition or Fairs" key="12"/>
+												</Select>
+											</f:content>
+										</f:SimpleForm>
+									</l:BlockLayoutCell>
+									<l:BlockLayoutCell>
+										<f:SimpleForm id="SimpleFormChange480_Trial2" editable="true" layout="ColumnLayout">
+											<f:content>
+												<Label text="Sub Supply Type Description" design="Bold"/>
+												<Input id="Sub_supply_Description"/>
+												<Label text="Transaction Type" design="Bold"/>
+												<Select id="Tranction_Type_Id">
+													<core:Item text="" key="E"/>
+													<core:Item text="Regular" key="1"/>
+													<core:Item text="Bill To-Ship To" key="2"/>
+													<core:Item text="Bill From-Dispatch From" key="3"/>
+													<core:Item text="Combination of 2 and 3" key="4"/>
+												</Select>
+											</f:content>
+										</f:SimpleForm>
+									</l:BlockLayoutCell>
+									<l:BlockLayoutCell>
+										<f:SimpleForm editable="true" layout="ColumnLayout">
+											<f:content>
+												<Label text="Transportation Mode" design="Bold"/>
+												<Select id="Transportation_Mode_Id">
+													<core:Item text="" key="E"/>
+													<core:Item text="Road" key="1"/>
+													<core:Item text="Rail" key="2"/>
+													<core:Item text="Air" key="3"/>
+													<core:Item text="Ship" key="4"/>
+													<core:Item text="in Transit" key="5"/>
+												</Select>
+												<Label text="Transporter Id" design="Bold"/>
+												<Select id="Transporter_Id">
+													<core:Item text="Select" key="0"></core:Item>
+													<core:Item text="TAX PRO" key="05AAACG1539P1Z"></core:Item>
+													<core:Item text="TAC" key="1q2w2"></core:Item>
+												</Select>
+											</f:content>
+										</f:SimpleForm>
+									</l:BlockLayoutCell>
+									<l:BlockLayoutCell>
+										<f:SimpleForm editable="true" layout="ColumnLayout">
+											<f:content>
+												<Label text="Transporter Name" design="Bold"/>
+												<Input id="Transporter_Name_Id" liveChange="livechangeTransporter_Name"/>
+												<Label text="Vehicle Type" design="Bold"/>
+												<Select id="Vehicle_Type_Id">
+													<core:Item text="" key="E"/>
+													<core:Item text="Regular" key="R"></core:Item>
+													<core:Item text="ODC" key="O"></core:Item>
+												</Select>
+											</f:content>
+										</f:SimpleForm>
+									</l:BlockLayoutCell>
+									<l:BlockLayoutCell>
+										<f:SimpleForm editable="true" layout="ColumnLayout">
+											<f:content>
+												<Label text="Vehicle No" design="Bold"/>
+												<Input id="Vehicle_No_Id"/>
+												<Label text="Transporter Document No" design="Bold"/>
+												<Input id="Transporter_Document_No"/>
+											</f:content>
+										</f:SimpleForm>
+									</l:BlockLayoutCell>
+								</l:BlockLayoutRow>
+							</l:BlockLayout>
+						</Panel>
+					</VBox>
+					<VBox id="panel1" visible="false" class="selectrep">
+						<Panel>
+							<f:SimpleForm id="SimpleFormChange480_Trial5" editable="true" layout="ColumnLayout" columnsM="2" columnsL="2" columnsXL="4">
+								<f:content>
+									<Label text="Cancle Reason" design="Bold"/>
+									<Select id="Id_Cnclrsn">
+										<core:Item text="" key="0"/>
+										<core:Item text="Duplicate" key="1"/>
+										<core:Item text="Data entry mistake" key="2"/>
+										<core:Item text="Order Cancelled" key="3"/>
+										<core:Item text="Others" key="4"/>
+									</Select>
+								</f:content>
+							</f:SimpleForm>
+						</Panel>
+					</VBox>
+					<VBox id="panel2" visible="false"></VBox>
+					<VBox id="panel3" visible="false"></VBox>
+					<!--<IconTabBar id="idIconTabBarInlineMode" headerMode="Inline" expanded="{device>/isNoPhone}">
+						<items>
+							<IconTabFilter text="Generate E-Way Bill" key="Generate_Ewaybill" class="Panel_title">
+								<Panel id="Generate_Panel">
+									<Panel class="selectrep panelcontent" width="98.3%">
+										<headerToolbar>
+											<OverflowToolbar height="2rem" class="Panel_header">
+												<Title text="Mandatory details for E-Way Bill generation" class="Panel_title"/>
+											</OverflowToolbar>
+										</headerToolbar>
+										<f:SimpleForm id="SimpleFormChange480_Trial1" editable="true" layout="ColumnLayout" columnsM="2" columnsL="2" columnsXL="4">
+											<f:content>
+												<Label text="Supply Type" design="Bold"/>
+												<Select>
+													<core:Item text="Inward"/>
+													<core:Item text="Outward"/>
+												</Select>
+												<Label text="Sub suply Type" design="Bold"/>
+												<Select>
+													<core:Item text="Supply"/>
+													<core:Item text="Import"/>
+													<core:Item text="Export"/>
+													<core:Item text="Job Work"/>
+													<core:Item text="For Own Use"/>
+													<core:Item text="Job Work Returns"/>
+													<core:Item text="Sales Return"/>
+													<core:Item text="Others"/>
+													<core:Item text="SKD/CKD/Lots"/>
+													<core:Item text="Line Sales"/>
+												</Select>
+												<Label text="Sub Supply Type Description" design="Bold"/>
+												<Input/>
+												<Label text="Transaction Type" design="Bold"/>
+												<Select>
+													<core:Item text="Regular"/>
+													<core:Item text="Bill To-Ship To"/>
+													<core:Item text="Bill From-Dispatch From"/>
+													<core:Item text="Combination of 2 and 3"/>
+												</Select>
+												<Label text="Transportation Mode" design="Bold"/>
+												<Select>
+													<core:Item text="Road"/>
+													<core:Item text="Rail"/>
+													<core:Item text="Air"/>
+													<core:Item text="Ship"/>
+													<core:Item text="in Transit"/>
+												</Select>
+											</f:content>
+										</f:SimpleForm>
+									</Panel>
+									<VBox class="selectrep" width="98.3%">
+										<l:BlockLayout>
+											<l:BlockLayoutRow>
+												<l:BlockLayoutCell>
+													<Panel class="selectrep2 panelcontent" height="92%" width="95%">
+														<headerToolbar>
+															<OverflowToolbar height="2rem" class="Panel_header">
+																<Title text="Part A" class="Panel_title"/>
+															</OverflowToolbar>
+														</headerToolbar>
+														<f:SimpleForm id="SimpleFormChange480_Trial2" editable="true" layout="ColumnLayout">
+															<f:content>
+																<Label text="Transporter Id" design="Bold"/>
+																<Select>
+																	<core:Item text="Select"></core:Item>
+																	<core:Item text="TAX PRO"></core:Item>
+																</Select>
+																<Label text="Transporter Name" design="Bold"/>
+																<Input/>
+															</f:content>
+														</f:SimpleForm>
+													</Panel>
+												</l:BlockLayoutCell>
+												<l:BlockLayoutCell>
+													<Panel class="selectrep2 panelcontent" height="92%" width="95%">
+														<headerToolbar>
+															<OverflowToolbar height="2rem" class="Panel_header">
+																<Title text="Part B" class="Panel_title"/>
+															</OverflowToolbar>
+														</headerToolbar>
+														<f:SimpleForm id="SimpleFormChange480_Trial4" editable="true" layout="ColumnLayout">
+															<f:content>
+																<Label text="Vehicle Type" design="Bold"/>
+																<Select>
+																	<core:Item text="Regular"></core:Item>
+																	<core:Item text="ODC"></core:Item>
+																</Select>
+																<Label text="Vehicle No" design="Bold"/>
+																<Input/>
+																<Label text="Transporter Document No" design="Bold"/>
+																<Input/>
+															</f:content>
+														</f:SimpleForm>
+													</Panel>
+												</l:BlockLayoutCell>
+											</l:BlockLayoutRow>
+										</l:BlockLayout>
+									</VBox>
+								</Panel>
+							</IconTabFilter>
+							<IconTabFilter text="Cancel E-Way Bill" key="Cancle_Ewaybill">
+								<Panel class="selectrep" width="98%">
+									<headerToolbar>
+										<OverflowToolbar height="3rem" class="Panel_header">
+											<Title text="Cancel Reason Code" class="Panel_title"/>
+										</OverflowToolbar>
+									</headerToolbar>
+									<f:SimpleForm id="SimpleFormChange480_Trial5" editable="true" layout="ColumnLayout" columnsM="2" columnsL="2" columnsXL="4">
+										<f:content>
+											<Label text="Cancle Reason" design="Bold"/>
+											<Select id="selectcancle">
+												<core:Item text="Select"/>
+												<core:Item text="Duplicate"/>
+												<core:Item text="Data entry mistake"/>
+												<core:Item text="Order Cancelled"/>
+												<core:Item text="Others"/>
+											</Select>
+										</f:content>
+									</f:SimpleForm>
+								</Panel>
+							</IconTabFilter>
+							<IconTabFilter text="Display E-Way Bill" key="Display_Ewaybill"></IconTabFilter>
+							<IconTabFilter text="Print E-Way Bill" key="Print_Ewaybill"></IconTabFilter>
+						</items>
+					</IconTabBar>-->
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

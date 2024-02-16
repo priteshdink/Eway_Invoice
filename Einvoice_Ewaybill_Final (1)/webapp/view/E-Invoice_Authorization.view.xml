@@ -1,0 +1,73 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:u="sap.ui.unified" xmlns:m="sap.m"
+	controllerName="com.dink.Einvoice.controller.E-Invoice_Authorization" xmlns:html="http://www.w3.org/1999/xhtml">
+	<m:Page showNavButton="true" navButtonPress="onBack" backgroundDesign="Transparent" class="pagebackcolor">
+		<m:content>
+			<m:Panel>
+				<Table id="einvoiceautho" selectionMode="None" rows="{ path: '/EinvAuthSet'}" visibleRowCount="7" filter="filterPrice">
+					<extension>
+						<m:OverflowToolbar>
+							<m:Title id="title" text="Authorization Check For E-Invoice Cockpit"/>
+							<m:ToolbarSpacer/>
+							<m:Button type="Emphasized" text="ADD" press="onAdd"/>
+							<!--<m:Button type="Emphasized" text="EDIT" press="onEdit"/>-->
+							<!--<m:ToolbarSeparator/>-->
+						</m:OverflowToolbar>
+					</extension>
+					<columns>
+						<Column filterProperty="Name" width="10rem">
+							<m:Label text="SAP System ID"/>
+							<template>
+								<m:Text text="{UserId}"/>
+							</template>
+						</Column>
+						<Column filterProperty="Quantity" filterType="sap.ui.model.type.Integer" width="10rem">
+							<m:Label text="SD(VF01)Flag"/>
+							<template>
+								<m:CheckBox selected="{= ${Vf01Flag} === 'X'}" editable="false"/>
+							</template>
+						</Column>
+						<Column filterProperty="Quantity" filterType="sap.ui.model.type.Integer" width="10rem">
+							<m:Label text="FI(Credit)Flag"/>
+							<template>
+								<m:CheckBox selected="{= ${Credit} === 'X'}" editable="false"/>
+							</template>
+						</Column>
+						<Column filterProperty="Quantity" filterType="sap.ui.model.type.Integer" width="10rem">
+							<m:Label text="FI(Debit)Flag"/>
+							<template>
+								<m:CheckBox selected="{= ${Debit} === 'X'}" editable="false"/>
+							</template>
+						</Column>
+						<Column filterProperty="Quantity" filterType="sap.ui.model.type.Integer" width="10rem">
+							<m:Label text="FI(RCM-FB60)Flag"/>
+							<template>
+								<m:CheckBox selected="{= ${Rcm} === 'X'}" editable="false"/>
+							</template>
+						</Column>
+						<Column filterProperty="Quantity" filterType="sap.ui.model.type.Integer" width="10rem">
+							<m:Label text="FI(RCM-MIRO)Flag"/>
+							<template>
+								<m:CheckBox selected="{= ${RcmMiro} === 'X'}" editable="false"/>
+							</template>
+						</Column>
+						<Column filterProperty="Quantity" filterType="sap.ui.model.type.Integer" width="11rem">
+							<m:Label text="Active/Deactive"/>
+							<template>
+								<m:CheckBox selected="{= ${Cancel} === 'X'}" editable="false"/>
+							</template>
+						</Column>
+						<Column width="12rem">
+							<m:Label text="Edit/Delete"/>
+							<template>
+								<m:HBox>
+									<m:Button icon="sap-icon://edit" type="Transparent" press="onEdit"/>
+									<m:Button icon="sap-icon://delete" type="Transparent" press="deleteEinvoiceAutho"/>
+								</m:HBox>
+							</template>
+						</Column>
+					</columns>
+				</Table>
+			</m:Panel>
+		</m:content>
+	</m:Page>
+</mvc:View>

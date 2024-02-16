@@ -1,0 +1,55 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" id="inputdialog">
+	<Dialog id="openDialog1" showHeader="false">
+		<Panel>
+			<headerToolbar>
+				<OverflowToolbar height="3rem" class="Panel_header">
+					<Title text="Portal URL" class="labelselectrep"/>
+					<ToolbarSpacer/>
+					<Button icon="sap-icon://decline" press="onCancel"></Button>
+				</OverflowToolbar>
+			</headerToolbar>
+			<f:SimpleForm id="SimpleFormDisplay35431" editable="true" layout="ResponsiveGridLayout" title="" labelSpanXL="3" labelSpanL="3"
+				labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+				columnsL="1" columnsM="1" singleContainerFullSize="false">
+				<f:content>
+					<Label text="SAP System ID" required="true"/>
+					<Input id="sapsystemid"/>
+					<Label text="Mode of Process" required="true"/>
+					<Select id="moprodessporturl">
+						<core:Item text="EINV" key="EINV"/>
+						<core:Item text="EBILL" key="EBILL"/>
+						<core:Item text="GST" key="GST"/>
+					</Select>
+					<Label text="Function" required="true"/>
+					<Input id="function"/>
+					<Label text="Portal URL1"/>
+					<Input id="url1"/>
+					<Label text="Portal URL2"/>
+					<Input id="url2"/>
+					<Label text="Portal URL3"/>
+					<Input id="url3"/>
+					<Label text="Portal URL4"/>
+					<Input id="url4"/>
+					<Label text="Portal URL5"/>
+					<Input id="url5"/>
+					<Label text="Portal URL6"/>
+					<Input id="url6"/>
+					<Label text="Portal URL7"/>
+					<Input id="url7"/>
+					<Label text="Portal URL8"/>
+					<Input id="url8"/>
+					<Label text="Portal URL9"/>
+					<Input id="url9"/>
+					<Label text="Portal URL10"/>
+					<Input id="url10"/>
+					<Label text="Active/Deactive"/>
+					<CheckBox id="activedeactive"></CheckBox>
+				</f:content>
+			</f:SimpleForm>
+		</Panel>
+		<buttons>
+			<Button text="Create" type="Emphasized" press=".oncreate"/>
+			<Button text="Clear" type="Emphasized" press="onclear"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,128 @@
+/* Enter your custom styles here */
+
+.logo>.sapMImageContentImageIcon {
+    max-height: 5.0rem;
+}
+
+
+.labelselectrep {
+    font-weight: bold;
+    background-color: #69696930;
+}
+
+.pagebackcolor {
+    background-color: #e8fcfc;
+
+}
+
+
+
+.Panel_header {
+    color: #333;
+    background-color: #e4eaee;
+    border-color: #ddd;
+}
+
+.selectrep {
+    border: 1px solid;
+    background-color: #fff;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    border-color: #ddd;
+    margin-top: 25px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+}
+
+.labelfont .sapMLabel {
+    font-weight: bold;
+}
+
+.selectrep1 {
+    border: 1px solid;
+    background-color: #fff;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    border-color: #ddd;
+    margin-top: 25px;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.selectrep2 {
+    border: 1px solid;
+    background-color: #fff;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    border-color: #ddd;
+    margin-top: 16px;
+
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+}
+
+.sapUiBlockLayoutSizeL:not(.sapUiBlockLayoutKeepFontSize) .sapUiBlockCellContent {
+    padding: 0rem 0rem !important;
+
+}
+
+.Panel_title {
+    font-weight: bold !important;
+}
+
+.sapMITBTextOnly .sapMITBFilter .sapMITBText {
+    height: 1rem;
+    line-height: 1rem;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: auto;
+    overflow: visible;
+    font-weight: bold;
+}
+
+.employeecenter {
+
+    width: 14rem !important;
+    height: 11rem;
+
+}
+
+.dashboard_padding_top {
+    padding-top: 30px;
+}
+
+.panelcontent>.sapMPanelContent {
+    padding: 0rem !important;
+}
+
+.sapMTextNoWrap,
+.sapMTextMaxLine {
+    font-size: 18px;
+    color: darkgoldenrod;
+    overflow: hidden;
+    text-align: center;
+}
+
+.sapMGTSubHdrTxt>.sapMText,
+.sapMGTSubHdrTxt {
+    text-align: center;
+}
+
+.sapMNCValue.Neutral,
+.sapMNCIndScale.Neutral,
+.sapMNCScale.Neutral {
+    color: #254d75;
+    margin-left: 5rem;
+}
+
+.sapMBar .sapMBarRight.sapMBarContainer>*:first-child:last-child,
+.sapMBar .sapMBarLeft.sapMBarContainer>*:first-child:last-child,
+.sapMBar .sapMBarMiddle .sapMBarContainer>*:first-child:last-child {
+    margin: 0;
+    font-weight: bold !important;
+}

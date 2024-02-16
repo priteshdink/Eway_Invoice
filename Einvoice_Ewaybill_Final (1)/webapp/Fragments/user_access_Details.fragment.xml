@@ -1,0 +1,43 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" id="inputdialog">
+	<Dialog id="openDialog15" showHeader="false">
+		<Panel>
+			<headerToolbar>
+				<OverflowToolbar height="3rem" class="Panel_header">
+					<Title text="E-invoice User Access Details" class="labelselectrep"/>
+					<ToolbarSpacer/>
+					<Button icon="sap-icon://decline" press="onCancel"></Button>
+				</OverflowToolbar>
+			</headerToolbar>
+			<f:SimpleForm id="SimpleFormlay3541" editable="true" layout="ResponsiveGridLayout" title="" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+				labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+				singleContainerFullSize="false">
+				<f:content>
+					<Label text="SAP System ID" required="true"/>
+					<Input id="sapsysid"/>
+					<Label text="Mode of Process" required="true"/>
+					<Select id="moprodess">
+						<core:Item text="EINV" key="EINV"/>
+						<core:Item text="EBILL" key="EBILL"/>
+						<core:Item text="GST" key="GST"/>
+					</Select>
+					<Label text="Company Code" required="true"/>
+					<Input id="comcode"/>
+					<Label text="Business Place" required="true"/>
+					<Input id="busplace"/>
+					<Label text="Seller GST Number"/>
+					<Input id="Seller_GST_Number"/>
+					<Label text="Portal User Name"/>
+					<Input id="Portal_User_Name"/>
+					<Label text="Portal Password"/>
+					<Input id="Portal_Password"/>
+					<Label text="Active/Deactive"/>
+					<CheckBox id="activedeactiveedituser"></CheckBox>
+				</f:content>
+			</f:SimpleForm>
+		</Panel>
+		<buttons>
+			<Button text="Create" type="Emphasized" press="oncreate"/>
+			<Button text="Clear" type="Emphasized" press="onclear"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

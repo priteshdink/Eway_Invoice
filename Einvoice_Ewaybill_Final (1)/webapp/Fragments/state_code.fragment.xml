@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" id="inputdialog">
+	<Dialog id="openDialog13" showHeader="false">
+		<Panel>
+			<headerToolbar>
+				<OverflowToolbar height="3rem" class="Panel_header">
+					<Title text="Add Portal Details(NIC)" class="labelselectrep"/>
+					<ToolbarSpacer/>
+					<Button icon="sap-icon://decline" press="onCancel"></Button>
+				</OverflowToolbar>
+			</headerToolbar>
+			<f:SimpleForm id="SimpleFrmDisply3541a" editable="true" layout="ResponsiveGridLayout" title="" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+				labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+				singleContainerFullSize="false">
+				<f:content>
+					<Label text="Country" required="true"/>
+					<Input id="country" maxLength="3"/>
+					<Label text="SAP Region" required="true"/>
+					<Input id="sapregion" maxLength="3"/>
+					<Label text="Govt. Region"/>
+					<Input id="govtregion"/>
+					<Label text="Active/Deactive"/>
+					<CheckBox id="activedeactivestc"></CheckBox>
+				</f:content>
+			</f:SimpleForm>
+		</Panel>
+		<buttons>
+			<Button text="Create" type="Emphasized" press="oncreate"/>
+			<Button text="Clear" type="Emphasized" press="onclear"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

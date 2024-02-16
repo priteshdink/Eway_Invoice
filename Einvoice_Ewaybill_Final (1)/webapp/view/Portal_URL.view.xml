@@ -1,0 +1,118 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:u="sap.ui.unified" xmlns:m="sap.m"
+	controllerName="com.dink.Einvoice.controller.Portal_URL" xmlns:html="http://www.w3.org/1999/xhtml">
+	<m:Page showNavButton="true" navButtonPress="onBack" backgroundDesign="Transparent" class="pagebackcolor">
+		<m:content>
+			<m:Panel>
+				<Table id="portal_url" selectionMode="None" visibleRowCount="7" filter="filterPrice" rows="{/PortalUrlSet}">
+					<extension>
+						<m:OverflowToolbar>
+							<m:Title id="title" text="Portal URL"/>
+							<m:ToolbarSpacer/>
+							<m:Button type="Emphasized" text="ADD" press="onAdd"/>
+							<!--<m:Button type="Emphasized" text="EDIT" press="onEdit"/>-->
+						</m:OverflowToolbar>
+					</extension>
+					<columns>
+						<Column filterProperty="Name" width="11rem">
+							<m:Label text="SAP System ID"/>
+							<template>
+								<m:Text text="{Sysid}" id="sapsystemid"/>
+							</template>
+						</Column>
+						<Column filterProperty="Category" defaultFilterOperator="StartsWith" width="11rem">
+							<m:Label text="Mode of Process"/>
+							<template>
+								<!--	<m:Select id="moprodess">
+								<core:Item text="EINV" key="EINV"/>
+							</m:Select>-->
+								<m:Text text="{Method}" id="moprodess"/>
+							</template>
+						</Column>
+						<Column width="11rem">
+							<m:Label text="Function"/>
+							<template>
+								<m:Text text="{Function}" id="function"/>
+							</template>
+						</Column>
+						<Column id="availability" filterProperty="Available" showFilterMenuEntry="false" defaultFilterOperator="EQ"
+							filterType="sap.ui.model.type.Boolean" width="11rem">
+							<m:Label text="Portal URL1"/>
+							<template>
+								<m:Text text="{Url1}" id="url1"/>
+							</template>
+						</Column>
+						<Column id="price" filterProperty="Price" width="11rem">
+							<m:Label text="Portal URL2"/>
+							<template>
+								<m:Text text="{Url2}" id="url2"/>
+							</template>
+						</Column>
+						<Column  width="11rem">
+							<m:Label text="Portal URL3"/>
+							<template>
+								<m:Text text="{Url3}" id="url3"/>
+							</template>
+						</Column>
+						<Column id="Portal_Password" filterProperty="Price" width="11rem">
+							<m:Label text="Portal URL4"/>
+							<template>
+								<m:Text text="{Url4}" id="url4"/>
+							</template>
+						</Column>
+						<Column filterProperty="Price" width="11rem">
+							<m:Label text="Portal URL5"/>
+							<template>
+								<m:Text text="{Url5}" id="url5"/>
+							</template>
+						</Column>
+						<Column filterProperty="Price" width="11rem">
+							<m:Label text="Portal URL6"/>
+							<template>
+								<m:Text text="{Url6}" id="url6"/>
+							</template>
+						</Column>
+						<Column filterProperty="Price" width="11rem">
+							<m:Label text="Portal URL7"/>
+							<template>
+								<m:Text text="{Url7}" id="url7"/>
+							</template>
+						</Column>
+						<Column filterProperty="Price" width="11rem">
+							<m:Label text="Portal URL8"/>
+							<template>
+								<m:Text text="{Url8}" id="url8"/>
+							</template>
+						</Column>
+						<Column filterProperty="Price" width="11rem">
+							<m:Label text="Portal URL9"/>
+							<template>
+								<m:Text text="{Url9}" id="url9"/>
+							</template>
+						</Column>
+						<Column filterProperty="Price" width="11rem">
+							<m:Label text="Portal URL10"/>
+							<template>
+								<m:Text text="{Url10}" id="url10"/>
+							</template>
+						</Column>
+						<Column width="11rem">
+							<m:Label text="Active/Deactive"/>
+							<template>
+								<m:CheckBox selected="{= ${Actflag} === 'X'}" editable="false" select="onchange"></m:CheckBox>
+							</template>
+						</Column>
+						<Column width="8rem">
+							<m:Label text="Edit/Delete"/>
+							<template>
+								<m:HBox>
+									<m:Button icon="sap-icon://edit" type="Transparent" press="onEdit"/>
+									<m:Button icon="sap-icon://delete" type="Transparent" press="deleteportalurl"/>
+								</m:HBox>
+							</template>
+						</Column>
+					</columns>
+				</Table>
+			</m:Panel>
+		</m:content>
+	</m:Page>
+</mvc:View>

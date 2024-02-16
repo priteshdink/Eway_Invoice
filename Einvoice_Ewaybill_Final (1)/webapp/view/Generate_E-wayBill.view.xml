@@ -1,0 +1,158 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:table="sap.ui.table" xmlns:u="sap.ui.unified"
+	controllerName="com.dink.Einvoice.controller.Generate_E-wayBill" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page class="labelselectrep" title="E-Waybill Generation" navButtonPress="onNavBack" showNavButton="true">
+				<content>
+					<Panel backgroundDesign="Transparent">
+						<table:Table rows="{Ewaybill>/EbillSet}" selectionMode="Single" id="Ewaybill_Display_Table" visibleRowCount="8" ariaLabelledBy="title" visible="false" enableBusyIndicator="true">
+							<table:extension>
+								<OverflowToolbar>
+									<ToolbarSpacer/>
+									<Button text="Generate E-WayBill" press="Generate_EWAYBill_Press" type="Emphasized"/>
+								</OverflowToolbar>
+							</table:extension>
+							<table:columns>
+								<table:Column width="4rem" hAlign="Center">
+									<Label text="Status" design="Bold" wrapping="true"/>
+									<table:template>
+										<Text text="{Ewaybill>Status}"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="8rem" hAlign="Center">
+									<Label text="Billing Documents" design="Bold" wrapping="true"/>
+									<table:template>
+										<Link text="{Ewaybill>Vbeln}" press="OnLinkPress" id="billnoLinkpress"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="7rem" hAlign="Center">
+									<Label text="Doc Type" design="Bold" wrapping="true"/>
+									<table:template>
+										<Text text="{Ewaybill>Fkart}"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="8rem" hAlign="Center">
+									<Label text="ODN No" design="Bold" wrapping="true"/>
+									<table:template>
+										<Text text="{Ewaybill>Xblnr}"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="8rem" hAlign="Center">
+									<Label text="SD Documents Currency" design="Bold" wrapping="true"/>
+									<table:template>
+										<Text text="{Ewaybill>Waerk}"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="8rem" hAlign="Center">
+									<Label text="Billing Date" design="Bold"/>
+									<table:template>
+										<Text text="{path: 'Ewaybill>Fkdat', type:'sap.ui.model.type.Date', formatOptions : { pattern:'yyyy.MM.dd', UTC: true}}"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="8rem" hAlign="Center">
+									<Label text="Company Code" design="Bold" wrapping="true"/>
+									<table:template>
+										<Text text="{Ewaybill>Bukrs}"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="8rem" hAlign="Center">
+									<Label text="Bill To Party" design="Bold" wrapping="true"/>
+									<table:template>
+										<Text text="{Ewaybill>Kunnr}"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="8rem" hAlign="Center">
+									<Label text="Bill To Party Name" design="Bold" wrapping="true"/>
+									<table:template>
+										<Text text="{Ewaybill>Name1}"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="8rem" hAlign="Center">
+									<Label text="Distance" design="Bold"/>
+									<table:template>
+										<Text text="{Ewaybill>Distance}"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="8rem" hAlign="Center">
+									<Label text="VehicleNo" design="Bold"/>
+									<table:template>
+										<Text text="{Ewaybill>VehicleNo}"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="8rem" hAlign="Center">
+									<Label text="EWAYBill Number" design="Bold"/>
+									<table:template>
+										<Text text="{Ewaybill>Ebillno}"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="8rem" hAlign="Center">
+									<Label text="EWAYBill Date" design="Bold"/>
+									<table:template>
+										<Text text="{Ewaybill>EgenDat}"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="8rem" hAlign="Center">
+									<Label text="EWAYBill ValidUpto" design="Bold"/>
+									<table:template>
+										<Text text="{Ewaybill>Vdtodate}"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="8rem" hAlign="Center">
+									<Label text="Cancel Date" design="Bold"/>
+									<table:template>
+										<Text text="{Ewaybill>Canceldate}"/>
+									</table:template>
+								</table:Column>
+								<table:Column width="8rem" hAlign="Center">
+									<Label text="Error Log" design="Bold"/>
+									<table:template>
+										<Text text="{Ewaybill>Errorlog}"/>
+									</table:template>
+								</table:Column>
+							</table:columns>
+						</table:Table>
+					</Panel>
+					<Panel backgroundDesign="Transparent">
+						<table:Table rows="{Ewaybill>/GenerateSet}" selectionMode="None" id="Generate_Table" visible="false" visibleRowCount="3" ariaLabelledBy="title" enableBusyIndicator="true">
+							<table:rowSettingsTemplate>
+								<table:RowSettings highlight="{= ${Ewaybill>Icon} === '3' ? 'Success' : 'Error'}"/>
+							</table:rowSettingsTemplate>
+							<table:columns>
+								<table:Column hAlign="Center">
+									<Label text="Billing Documents" design="Bold" wrapping="true"/>
+									<table:template>
+										<Link text="{Ewaybill>Vbeln}" press="OnLinkPress" id="bilclnoLinkpress"/>
+									</table:template>
+								</table:Column>
+								<table:Column hAlign="Center">
+									<Label text="EWAYBill Number" design="Bold" wrapping="true"/>
+									<table:template>
+										<Text text="{Ewaybill>Ebillno}"/>
+									</table:template>
+								</table:Column>
+								<table:Column hAlign="Center">
+									<Label text="EWAYBill Date" design="Bold" wrapping="true"/>
+									<table:template>
+										<Text text="{Ewaybill>EgenDat}"/>
+									</table:template>
+								</table:Column>
+								<table:Column hAlign="Center">
+									<Label text="Cancel Date" design="Bold" wrapping="true"/>
+									<table:template>
+										<Text text="{Ewaybill>Canceldate}"/>
+									</table:template>
+								</table:Column>
+								<table:Column hAlign="Center">
+									<Label text="Errorlog" design="Bold"/>
+									<table:template>
+										<Text text="{Ewaybill>Errorlog}"/>
+									</table:template>
+								</table:Column>
+							</table:columns>
+						</table:Table>
+					</Panel>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,120 @@
+<mvc:View controllerName="com.dink.Einvoice.controller.Einvoice_Inpscreen" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<App>
+		<pages>
+			<Page showNavButton="true" navButtonPress="onNavBack" title="E-Invoice Input Screen" backgroundDesign="Transparent" class="pagebackcolor">
+				<content>
+					<VBox alignContent="Center" class="selectrep">
+						<Panel>
+							<headerToolbar>
+								<OverflowToolbar height="3rem" class="Panel_header">
+									<Title text="Mandatory Input" class="labelselectrep"/>
+								</OverflowToolbar>
+							</headerToolbar>
+							<f:SimpleForm id="SimpleFormChange480_Trial" class="bg_color" editable="true" layout="ColumnLayout" columnsM="1" columnsL="1" columnsXL="4" emptySpanL="4">
+								<f:content >
+									<Label text="Company Code" design="Bold" wrapping="true"/>
+									<!--	<Input maxLength="4" width="70px" id="companyCode"/>-->
+									<ComboBox id="companyCode" width="9rem">
+										<core:Item text="" key=""/>
+									</ComboBox>
+									<Label text="Document No" required="true" design="Bold" wrapping="true"/>
+									<!--	<Input maxLength="15" width="170px" class="DocNoLength" id="docnofrom"/>
+										<Input maxLength="15" width="170px" class="DocNoLength" id="docnoto"/>-->
+									<ComboBox id="docnofrom" class="DocNoLength" width="9rem">
+										<core:Item text="" key=""/>
+									</ComboBox>
+									<ComboBox id="docnoto" class="DocNoLength" width="9rem">
+										<core:Item text="" key=""/>
+									</ComboBox>
+									<Label text="Billing / Posting Date" required="true" design="Bold" wrapping="true"/>
+									<DatePicker width="9rem" id="from" valueFormat="yyyy-MM-ddThh:mm:ss" displayFormat="dd.MM.yyyy" class="DocNoLength"/>
+									<DatePicker width="9rem" id="to" valueFormat="yyyy-MM-ddThh:mm:ss" displayFormat="dd.MM.yyyy" class="DocNoLength"/>
+									<!--	<Label text="Billing / Posting Date"/>
+								<Input/>-->
+									<!--	<Label text="to"/>
+								<DatePicker id="DP2"/>
+								<Label text="to"/>
+								<Input/>
+								<Label text="to"/>
+								<Input/>-->
+								</f:content>
+							</f:SimpleForm>
+							<VBox justifyContent="Center" alignContent="Center" alignItems="Center">
+								<Label text="Select one option" required="true" design="Bold" class="sapUiSmallMarginTop sapUiLargeMarginBegin" wrapping="true"/>
+								<HBox class="sapUiSmallMargin sapUiLargeMarginBegin">
+									<RadioButtonGroup id="rbg3" columns="4">
+										<RadioButton id="RB3-1" text="Generate E - Invoice" select="onOtherRadioPress" useEntireWidth="true" class="rbtext"/>
+										<RadioButton id="RB3-2" text="Cancel E - Invoice" select="onCancelPress" class="rbtext"/>
+										<RadioButton id="RB3-3" text="Display E - Invoice" select="onOtherRadioPress" class="rbtext"/>
+										<RadioButton id="RB3-4" text="Print E - Invoice" select="onOtherRadioPress" class="rbtext"/>
+									</RadioButtonGroup>
+								</HBox>
+							</VBox>
+							<VBox justifyContent="Center" alignContent="Center" alignItems="Center">
+								<f:SimpleForm id="SimpleFormChange480_Trial5" editable="true" layout="ColumnLayout" columnsM="2" columnsL="2" columnsXL="4" visible="false">
+									<f:content>
+										<Label text="Cancel Reason" design="Bold" required="true"/>
+										<Select id="cancelReason">
+											<core:Item key="1" text="Duplicate"/>
+											<core:Item key="2" text="Data Entry Mistake"/>
+										</Select>
+									</f:content>
+								</f:SimpleForm>
+							</VBox>
+							<VBox alignContent="Center" justifyContent="Center" alignItems="Center">
+								<Button text="Search" press="onSearch" type="Emphasized" class="sapUiSmallMarginTop"/>
+							</VBox>
+						</Panel>
+					</VBox>
+					<!--<IconTabBar id="idIconTabBarInlineMode" headerMode="Inline" expanded="{device>/isNoPhone}">
+						<items>
+							<IconTabFilter text="Generate E - Invoice" key="Generate_Einvoice">
+								<HBox alignContent="Center" alignItems="Center" justifyContent="Center">
+									<Button text="Search" press="onSearch" type="Emphasized" class="sapUiLargeMarginTop"/>
+								</HBox>
+							</IconTabFilter>
+							<IconTabFilter text="Cancel E - Invoice" key="Cancel_Einvoice">
+								<Panel class="selectrep" width="98%">
+									<headerToolbar>
+										<OverflowToolbar height="3rem" class="Panel_header">
+											<Title text="Cancel Reason Code" class="labelselectrep"/>
+										</OverflowToolbar>
+									</headerToolbar>
+									<f:SimpleForm id="SimpleFormChange480_Trial5" editable="true" layout="ColumnLayout" columnsM="2" columnsL="2" columnsXL="4">
+										<f:content>
+											<Label text="Cancel Reason" design="Bold"/>
+											<Select id="cancelReason">
+												<core:Item key="1" text="Duplicate"/>
+												<core:Item key="2" text="Data Entry Mistake"/>
+											</Select>
+										</f:content>
+									</f:SimpleForm>
+								</Panel>
+								<HBox alignContent="Center" alignItems="Center" justifyContent="Center">
+									<Button text="Search" press="onSearch" type="Emphasized" class="sapUiSmallMarginTop"/>
+								</HBox>
+							</IconTabFilter>
+							<IconTabFilter text="Display E - Invoice" key="Display_Einvoice">
+								<HBox alignContent="Center" alignItems="Center" justifyContent="Center">
+									<Button text="Search" press="onSearch" type="Emphasized" class="sapUiLargeMarginTop"/>
+								</HBox>
+							</IconTabFilter>
+							<IconTabFilter text="Print E - Invoice" key="Print_Einvoice">
+								<HBox alignContent="Center" alignItems="Center" justifyContent="Center" class="sapUiLargeMarginTop">
+									<Button text="Search" press="onSearch" type="Emphasized"/>
+								</HBox>
+							</IconTabFilter>
+						</items>
+					</IconTabBar>-->
+				</content>
+				<!--<footer>
+					<OverflowToolbar>
+						<ToolbarSpacer/>
+						<Button text="Search" press="onSearch" type="Emphasized" class="sapUiSmallMarginEnd"/>
+					</OverflowToolbar>
+				</footer>-->
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

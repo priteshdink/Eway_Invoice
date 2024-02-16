@@ -1,0 +1,445 @@
+{
+    "_version": "1.12.0",
+    "sap.app": {
+        "id": "com.dink.Einvoice",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "sourceTemplate": {
+            "id": "servicecatalog.connectivityComponentForManifest",
+            "version": "0.0.0",
+            "toolsId": "6ceb9865-0ed9-4cad-833a-1e38648b698d"
+        },
+        "dataSources": {
+            "ZEINVOICE_SRV": {
+                "uri": "/sap/opu/odata/sap/ZEINVOICE_SRV/",
+                "type": "OData",
+                "settings": {
+                    "localUri": "localService/metadata.xml"
+                }
+            },
+            "ZEWAY_BILL_SRV": {
+                "uri": "/sap/opu/odata/sap/ZEWAY_BILL_SRV/",
+                "type": "OData",
+                "settings": {
+                    "localUri": "localService/ZEWAY_BILL_SRV/metadata.xml"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "rootView": {
+            "viewName": "com.dink.Einvoice.view.View1",
+            "type": "XML",
+            "async": true,
+            "id": "View1"
+        },
+        "dependencies": {
+            "minUI5Version": "1.65.6",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.ui.layout": {},
+                "sap.ui.table": {
+                    "minVersion": ""
+                }
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "com.dink.Einvoice.i18n.i18n"
+                }
+            },
+            "": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "ZEWAY_BILL_SRV",
+                "preload": true
+            },
+            "Ewaybill": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "ZEWAY_BILL_SRV",
+                "preload": true
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "com.dink.Einvoice.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "TargetView1",
+                    "pattern": "",
+                    "target": [
+                        "TargetView1"
+                    ]
+                },
+                {
+                    "name": "Master_Page",
+                    "pattern": "Master_Page",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "Master_Page"
+                    ]
+                },
+                {
+                    "name": "Portal_Details",
+                    "pattern": "Portal_Details",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "Portal_Details"
+                    ]
+                },
+                {
+                    "name": "User_Access_Details",
+                    "pattern": "User_Access_Details",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "User_Access_Details"
+                    ]
+                },
+                {
+                    "name": "Portal_URL",
+                    "pattern": "Portal_URL",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "Portal_URL"
+                    ]
+                },
+                {
+                    "name": "Document_Type",
+                    "pattern": "Document_Type",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "Document_Type"
+                    ]
+                },
+                {
+                    "name": "State_Code",
+                    "pattern": "State_Code",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "State_Code"
+                    ]
+                },
+                {
+                    "name": "UOM_Code",
+                    "pattern": "UOM_Code",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "UOM_Code"
+                    ]
+                },
+                {
+                    "name": "Condition_Type",
+                    "pattern": "Condition_Type",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "Condition_Type"
+                    ]
+                },
+                {
+                    "name": "E-Invoice_Authorization",
+                    "pattern": "E-Invoice_Authorization",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "E-Invoice_Authorization"
+                    ]
+                },
+                {
+                    "name": "HSN_code",
+                    "pattern": "HSN_code",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "HSN_code"
+                    ]
+                },
+                {
+                    "name": "Einvoice_Inpscreen",
+                    "pattern": "Einvoice_Inpscreen",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "Einvoice_Inpscreen"
+                    ]
+                },
+                {
+                    "name": "GenerateEinvoice",
+                    "pattern": "GenerateEinvoice/{from},{to},{docFrom},{docTo},{companyCode}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "GenerateEinvoice"
+                    ]
+                },
+                {
+                    "name": "CancelEinvoice",
+                    "pattern": "CancelEinvoice/{from},{to},{docFrom},{docTo},{companyCode},{canrsn}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "CancelEinvoice"
+                    ]
+                },
+                {
+                    "name": "EinvoiceDisplay",
+                    "pattern": "EinvoiceDisplay/{from},{to},{docFrom},{docTo},{companyCode}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "EinvoiceDisplay"
+                    ]
+                },
+                {
+                    "name": "PdfDisplay",
+                    "pattern": "PdfDisplay/{from},{to},{docFrom},{docTo},{companyCode}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "PdfDisplay"
+                    ]
+                },
+                {
+                    "name": "Transporter_Details",
+                    "pattern": "Transporter_Details",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "Transporter_Details"
+                    ]
+                },
+                {
+                    "name": "EwaybillDistance",
+                    "pattern": "EwaybillDistance",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "EwaybillDistance"
+                    ]
+                },
+                {
+                    "name": "E_WaybillAuthCheck",
+                    "pattern": "E_WaybillAuthCheck",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "E_WaybillAuthCheck"
+                    ]
+                },
+                {
+                    "name": "Eway_Bill",
+                    "pattern": "Eway_Bill",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "Eway_Bill"
+                    ]
+                },
+                {
+                    "name": "Generate_E-wayBill",
+                    "pattern": "Generate_E-wayBill/{Date1},{BillNo},{BillNoTo},{Date2},{EwaybilNo},{EwaybilNoTo},{Supply_type},{Sub_Supply_type},{Sub_supply_Description},{Transaction_Type},{Transportation_Mode},{Transporter_Id},{Transporter_Name},{Vehicle_Type},{Vehicle_No},{Transporter_Document_No}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "Generate_E-wayBill"
+                    ]
+                },
+                {
+                    "name": "Ewaybill_Cancel",
+                    "pattern": "Ewaybill_Cancel /{Date1},{Date2},{CnlRsn},{BillNo},{BillNoTo},{EwaybilNo},{EwaybilNoTo}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "Ewaybill_Cancel"
+                    ]
+                },
+                {
+                    "name": "Display_e-Waybill",
+                    "pattern": "Display_e-Waybill/{Date1},{Date2},{BillNo},{BillNoTo},{EwaybilNo},{EwaybilNoTo}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "Display_e-Waybill"
+                    ]
+                },
+                {
+                    "name": "Print_E-waybill",
+                    "pattern": "Print_E-waybill/{Date1},{Date2},{BillNo},{BillNoTo},{EwaybilNo},{EwaybilNoTo}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "Print_E-waybill"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetView1": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "",
+                    "viewName": "View1"
+                },
+                "Portal_Details": {
+                    "viewType": "XML",
+                    "viewName": "Portal_Details"
+                },
+                "Master_Page": {
+                    "viewType": "XML",
+                    "viewName": "Master_Page"
+                },
+                "User_Access_Details": {
+                    "viewType": "XML",
+                    "viewName": "User_Access_Details"
+                },
+                "Portal_URL": {
+                    "viewType": "XML",
+                    "viewName": "Portal_URL"
+                },
+                "Document_Type": {
+                    "viewType": "XML",
+                    "viewName": "Document_Type"
+                },
+                "State_Code": {
+                    "viewType": "XML",
+                    "viewName": "State_Code"
+                },
+                "UOM_Code": {
+                    "viewType": "XML",
+                    "viewName": "UOM_Code"
+                },
+                "Condition_Type": {
+                    "viewType": "XML",
+                    "viewName": "Condition_Type"
+                },
+                "E-Invoice_Authorization": {
+                    "viewType": "XML",
+                    "viewName": "E-Invoice_Authorization"
+                },
+                "HSN_code": {
+                    "viewType": "XML",
+                    "viewName": "HSN_code"
+                },
+                "Einvoice_Inpscreen": {
+                    "viewType": "XML",
+                    "viewName": "Einvoice_Inpscreen"
+                },
+                "GenerateEinvoice": {
+                    "viewType": "XML",
+                    "viewName": "GenerateEinvoice"
+                },
+                "CancelEinvoice": {
+                    "viewType": "XML",
+                    "viewName": "CancelEinvoice"
+                },
+                "EinvoiceDisplay": {
+                    "viewType": "XML",
+                    "viewName": "EinvoiceDisplay"
+                },
+                "PdfDisplay": {
+                    "viewType": "XML",
+                    "viewName": "PdfDisplay"
+                },
+                "Transporter_Details": {
+                    "viewType": "XML",
+                    "viewName": "Transporter_Details"
+                },
+                "EwaybillDistance": {
+                    "viewType": "XML",
+                    "viewName": "EwaybillDistance"
+                },
+                "E_WaybillAuthCheck": {
+                    "viewType": "XML",
+                    "viewName": "E_WaybillAuthCheck"
+                },
+                "Eway_Bill": {
+                    "viewType": "XML",
+                    "viewName": "Eway_Bill"
+                },
+                "Generate_E-wayBill": {
+                    "viewType": "XML",
+                    "viewName": "Generate_E-wayBill"
+                },
+                "Ewaybill_Cancel": {
+                    "viewType": "XML",
+                    "viewName": "Ewaybill_Cancel"
+                },
+                "Display_e-Waybill": {
+                    "viewType": "XML",
+                    "viewName": "Display_e-Waybill"
+                },
+                "Print_E-waybill": {
+                    "viewType": "XML",
+                    "viewName": "Print_E-waybill"
+                }
+            }
+        }
+    },
+    "sap.platform.hcp": {
+        "uri": "webapp",
+        "_version": "1.1.0"
+    },
+    "sap.platform.abap": {
+        "uri": "/sap/bc/ui5_ui5/sap/zewaybii_deploy/webapp",
+        "_version": "1.1.0"
+    }
+}

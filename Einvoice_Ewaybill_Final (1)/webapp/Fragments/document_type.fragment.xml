@@ -1,0 +1,76 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" id="inputdialog">
+	<Dialog id="openDialogdocadd" showHeader="false">
+		<Panel>
+			<headerToolbar>
+				<OverflowToolbar height="3rem" class="Panel_header">
+					<Title text="Mapping for GOV.Doc Type with SAP Doc Type" class="labelselectrep"/>
+					<ToolbarSpacer/>
+					<Button icon="sap-icon://decline" press="closedocumenttype"></Button>
+				</OverflowToolbar>
+			</headerToolbar>
+			<f:SimpleForm id="SimpleFormDisplay3543" editable="true" layout="ResponsiveGridLayout" title="" labelSpanXL="3" labelSpanL="3"
+				labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+				columnsL="1" columnsM="1" singleContainerFullSize="false">
+				<f:content>
+					<Label text="Govt. Doc Type" required="true"/>
+					<Select selectedKey="{GovDtyp}" id="govdtypdoctype">
+						<core:Item key="" text=""/>
+						<core:Item key="CRN" text="Credit Note"/>
+						<core:Item key="DBN" text="Debit Note"/>
+						<core:Item key="INV" text="Invoice"/>
+						<core:Item key="BIL" text="Bill of Supply"/>
+						<core:Item key="BOE" text="Bill of Entry"/>
+						<core:Item key="CHL" text="Delivery Challan"/>
+						<core:Item key="OTH" text="Others"/>
+					</Select>
+					<Label text="SAP Doc Type" required="true"/>
+					<Input id="sapdoctyp"/>
+					<Label text="Type of Supply"/>
+					<Select selectedKey="{SupTyp}" id="suptyp">
+						<core:Item key="" text=""/>
+						<core:Item key="B2B" text="Business to Business"/>
+						<core:Item key="EXPWP" text="Export with Payment"/>
+						<core:Item key="EXPWOP" text="Export without Payment"/>
+						<core:Item key="SEZWP" text="SEZ with payment"/>
+						<core:Item key="SEZWOP" text="SEZ without payment"/>
+						<core:Item key="DEXP" text="Deemed Export"/>
+						<core:Item key="DEXP" text="Deemed Export"/>
+					</Select>
+					<Label text="SAP Module"/>
+					<Select selectedKey="{Zmodule}" id="zmodule">
+						<core:Item key="SD" text="Sales &amp; Distribution"/>
+						<core:Item key="FI" text="Finance"/>
+					</Select>
+					<Label text="Service or Not"/>
+					<Select selectedKey="{Service}" id="service">
+						<core:Item key="" text=""/>
+						<core:Item key="Y" text="Yes"/>
+						<core:Item key="N" text="No"/>
+					</Select>
+					<Label text="Tax Liability"/>
+					<Select selectedKey="{Regrev}" id="regrev">
+						<core:Item key="" text=""/>
+						<core:Item key="Y" text="Yes"/>
+						<core:Item key="N" text="No"/>
+					</Select>
+					<Label text="IGST on Intra State"/>
+					<Select selectedKey="{Igstonintra}" id="igstonintra">
+						<core:Item key="" text=""/>
+						<core:Item key="Y" text="Yes"/>
+						<core:Item key="N" text="No"/>
+					</Select>
+					<Label text="E-Invoice Flag"/>
+					<CheckBox id="einvoiceflag"></CheckBox>
+					<Label text="E-Way Bill Flag"/>
+					<CheckBox id="ewaybillflag"></CheckBox>
+					<Label text="Auto Flag"/>
+					<CheckBox id="autoflag"></CheckBox>
+				</f:content>
+			</f:SimpleForm>
+		</Panel>
+		<buttons>
+			<Button text="Create" type="Emphasized" press="oncreate"/>
+			<Button text="Clear" type="Emphasized" press="onclear"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,48 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:u="sap.ui.unified" xmlns:m="sap.m"
+	controllerName="com.dink.Einvoice.controller.UOM_Code" xmlns:html="http://www.w3.org/1999/xhtml">
+	<m:Page showNavButton="true" navButtonPress="onBack" backgroundDesign="Transparent" class="pagebackcolor">
+		<m:content>
+			<m:Panel>
+				<Table id="uomcodetable" selectionMode="None" rows="{/UOMCodeSet}" visibleRowCount="7" filter="filterPrice">
+					<extension>
+						<m:OverflowToolbar>
+							<m:Title id="title" text="UOM Code"/>
+							<m:ToolbarSpacer/>
+							<m:Button type="Emphasized" text="ADD" press="onAdd"/>
+							<!--<m:Button type="Emphasized" text="EDIT" press="onEdit"/>-->
+						</m:OverflowToolbar>
+					</extension>
+					<columns>
+						<Column filterProperty="Category" defaultFilterOperator="StartsWith" width="20rem">
+							<m:Label text="Govt. UOM"/>
+							<template>
+								<m:Text text="{GovUom}"/>
+							</template>
+						</Column>
+						<Column width="21rem">
+							<m:Label text="SAP UOM"/>
+							<template>
+								<m:Text text="{SapUom}"/>
+							</template>
+						</Column>
+						<Column width="21rem">
+							<m:Label text="Active/Deactive"/>
+							<template>
+								<m:CheckBox selected="{= ${Actflag} === 'X'}" editable="false" select="onchange"></m:CheckBox>
+							</template>
+						</Column>
+						<Column width="21rem">
+							<m:Label text="Edit/Delete"/>
+							<template>
+								<m:HBox>
+									<m:Button icon="sap-icon://edit" type="Transparent" press="onEdit"/>
+									<m:Button icon="sap-icon://delete" type="Transparent" press="deleteUOMcode"/>
+								</m:HBox>
+							</template>
+						</Column>
+					</columns>
+				</Table>
+			</m:Panel>
+		</m:content>
+	</m:Page>
+</mvc:View>

@@ -1,0 +1,147 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:table="sap.ui.table"
+	xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core" id="inputdialog">
+	<Dialog id="openDialog13" showHeader="false">
+		<Panel>
+			<headerToolbar>
+				<OverflowToolbar height="3rem" class="Panel_header">
+					<Title text="Document Details" class="labelselectrep"/>
+					<ToolbarSpacer/>
+					<Button icon="sap-icon://decline" press="onclose"></Button>
+				</OverflowToolbar>
+			</headerToolbar>
+			<table:Table rows="{/EinvgenSet('0090039309')/NavFromEinvgenToEinvgen_item}" selectionMode="None" visible="false" visibleRowCount="5"
+				id="documentitem" ariaLabelledBy="title">
+				<table:extension>
+					<OverflowToolbar>
+						<Title text="E-Invoice Line item Details" titleStyle="H4"/>
+					</OverflowToolbar>
+				</table:extension>
+				<table:columns>
+					<table:Column width="8rem" hAlign="Center">
+						<Label text="Document Number" wrapping="true" design="Bold"/>
+						<table:template>
+							<Text text="{Vbeln}"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="6rem" hAlign="Center">
+						<Label text="Doc Item" wrapping="true" design="Bold"/>
+						<table:template>
+							<Text text="{Posnr}"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="9rem" hAlign="Center">
+						<Label text="Material Code" wrapping="true" design="Bold"/>
+						<table:template>
+							<Text text="{Matnr}"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="16rem" hAlign="Center">
+						<Label text="Material Description" wrapping="true" design="Bold"/>
+						<table:template>
+							<Text class="taskdetailtext" text="{Arktx}"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="9rem" hAlign="Center">
+						<Label text="Quantity" design="Bold"/>
+						<table:template>
+							<Text text="{Fkimg}" wrapping="true"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="4rem" hAlign="Center">
+						<Label text="UOM" design="Bold"/>
+						<table:template>
+							<Text text="{Vrkme}"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="7rem" hAlign="Center">
+						<Label text="Plant" wrapping="true" design="Bold"/>
+						<table:template>
+							<Text text="{Werks}"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="6rem" hAlign="Center">
+						<Label text="HSN Code" wrapping="true" design="Bold"/>
+						<table:template>
+							<Text text="{Steuc}"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="6rem" hAlign="Center">
+						<Label text="Currency" wrapping="true" design="Bold"/>
+						<table:template>
+							<Text text="{Waerk}"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="6rem" hAlign="Center">
+						<Label text="Unit Price" design="Bold"/>
+						<table:template>
+							<Text text="{Unitprice}"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="9rem" hAlign="Center">
+						<Label text="Other-Taxable Value" wrapping="true" design="Bold"/>
+						<table:template>
+							<Text text="{OtherTamt}"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="9rem" hAlign="Center">
+						<Label text="Gross Amount" design="Bold"/>
+						<table:template>
+							<Text text="{GrossAmt}"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="9rem" hAlign="Center">
+						<Label text="Discount" wrapping="true" design="Bold"/>
+						<table:template>
+							<Text text="{Discount}"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="9rem" hAlign="Center">
+						<Label text="Taxable Value" wrapping="true" design="Bold"/>
+						<table:template>
+							<Text text="{TaxableVal}"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="8rem" hAlign="Center">
+						<Label text="GST Rate" wrapping="true" design="Bold"/>
+						<table:template>
+							<Text text="{GstRate}"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="8rem" hAlign="Center">
+						<Label text="IGST Value" wrapping="true" design="Bold"/>
+						<table:template>
+							<Text text="{IgstAmt}"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="8rem" hAlign="Center">
+						<Label text="SGST Value" wrapping="true" design="Bold"/>
+						<table:template>
+							<Text text="{SgstAmt}"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="8rem" hAlign="Center">
+						<Label text="CGST Value" wrapping="true" design="Bold"/>
+						<table:template>
+							<Text text="{CgstAmt}"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="8rem" hAlign="Center">
+						<Label text="Other Non-Taxable Value" wrapping="true" design="Bold"/>
+						<table:template>
+							<Text text="{OtherNamt}"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="8rem" hAlign="Center">
+						<Label text="Total Item Value" wrapping="true" design="Bold"/>
+						<table:template>
+							<Text text="{GrossAmt}"/>
+						</table:template>
+					</table:Column>
+				</table:columns>
+			</table:Table>
+		</Panel>
+		<buttons>
+			<Button text="Close" type="Emphasized" press="onclose"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

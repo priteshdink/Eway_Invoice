@@ -1,0 +1,83 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:u="sap.ui.unified" xmlns:m="sap.m"
+	controllerName="com.dink.Einvoice.controller.User_Access_Details" xmlns:html="http://www.w3.org/1999/xhtml">
+	<m:Page showNavButton="true" navButtonPress="onBack" backgroundDesign="Transparent" class="pagebackcolor">
+		<m:content>
+			<m:Panel>
+				<Table id="useraccessdetails" selectionMode="None" rows="{/UserAcessSet}" visibleRowCount="7" filter="filterPrice">
+					<extension>
+						<m:OverflowToolbar>
+							<m:Title id="title" text="User Access Details"/>
+							<m:ToolbarSpacer/>
+							<m:Button type="Emphasized" text="ADD" press="onAdd"/>
+							<!--	<m:Button type="Emphasized" text="EDIT" press="onEdit"/>-->
+							<!--<m:ToolbarSeparator/>-->
+						</m:OverflowToolbar>
+					</extension>
+					<columns>
+						<Column filterProperty="Name" width="9rem">
+							<m:Label text="SAP System ID"/>
+							<template>
+								<m:Text text="{Syid}"/>
+							</template>
+						</Column>
+						<Column filterProperty="Category" defaultFilterOperator="StartsWith" width="9rem">
+							<m:Label text="Mode of Process"/>
+							<template>
+								<!--	<m:Select >
+								<core:Item text="EINV"/>
+							</m:Select>-->
+								<m:Text text="{Method}"/>
+							</template>
+						</Column>
+						<Column width="9rem">
+							<m:Label text="Company Code"/>
+							<template>
+								<m:Text text="{Bukrs}"/>
+							</template>
+						</Column>
+						<Column id="availability" filterProperty="Available" showFilterMenuEntry="false" defaultFilterOperator="EQ"
+							filterType="sap.ui.model.type.Boolean" width="9rem">
+							<m:Label text="Business Place"/>
+							<template>
+								<m:Text text="{J1bbranc}"/>
+							</template>
+						</Column>
+						<Column id="price" filterProperty="Price" width="10rem">
+							<m:Label text="Seller GST Number"/>
+							<template>
+								<m:Text text="{Gstno}"/>
+							</template>
+						</Column>
+						<Column width="10rem">
+							<m:Label text="Portal User Name"/>
+							<template>
+								<m:Text text="{Username}"/>
+							</template>
+						</Column>
+						<Column id="Portal_Password" filterProperty="Price" width="9rem">
+							<m:Label text="Portal Password"/>
+							<template>
+								<m:Text text="{Password}"/>
+							</template>
+						</Column>
+						<Column width="8rem">
+							<m:Label text="Active/Deactive"/>
+							<template>
+								<m:CheckBox selected="{= ${Actflag} === 'X'}" editable="false"/>
+							</template>
+						</Column>
+						<Column width="10rem">
+							<m:Label text="Edit/Delete"/>
+							<template>
+								<m:HBox>
+									<m:Button icon="sap-icon://edit" type="Transparent" press="onEdit"/>
+									<m:Button icon="sap-icon://delete" type="Transparent" press="deleteuseraccessdetails"/>
+								</m:HBox>
+							</template>
+						</Column>
+					</columns>
+				</Table>
+			</m:Panel>
+		</m:content>
+	</m:Page>
+</mvc:View>

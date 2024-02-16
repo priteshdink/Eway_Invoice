@@ -1,0 +1,29 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" id="inputdialog">
+	<Dialog showHeader="false">
+		<Panel>
+			<headerToolbar>
+				<OverflowToolbar height="3rem" class="Panel_header">
+					<Title text="Add Transporter Details" class="labelselectrep"/>
+					<ToolbarSpacer/>
+					<Button icon="sap-icon://decline" press="onCancel"></Button>
+				</OverflowToolbar>
+			</headerToolbar>
+			<f:SimpleForm id="SimpleFormDilay432" editable="true" layout="ResponsiveGridLayout" title="" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+				labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+				singleContainerFullSize="false">
+				<f:content>
+					<Label text="Transporter Id" required="true"/>
+					<Input id="transid" maxLength="18"/>
+					<Label text="Transporter Name" />
+					<Input id="transname" maxLength="30"/>
+					<Label text="Active/Deactive"/>
+					<CheckBox id="activedeactivestc"></CheckBox>
+				</f:content>
+			</f:SimpleForm>
+		</Panel>
+		<buttons>
+			<Button text="Create" type="Emphasized" press="oncreate"/>
+			<Button text="Clear" type="Emphasized" press="onclear"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

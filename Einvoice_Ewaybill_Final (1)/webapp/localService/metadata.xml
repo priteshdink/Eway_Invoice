@@ -1,0 +1,19 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZEINVOICE_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="Portal_details" sap:content-version="1">
+				<Key><PropertyRef Name="Mandt"/><PropertyRef Name="Syid"/><PropertyRef Name="Method"/><PropertyRef Name="Username"/><PropertyRef Name="Password"/><PropertyRef Name="Version"/></Key><Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Client" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Syid" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="SAP System ID" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Method" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Mode of Process" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Username" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Portal User Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Password" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Portal Password" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Version" Type="Edm.String" Nullable="false" MaxLength="6" sap:label="Portal Version" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="VersionJson" Type="Edm.String" Nullable="false" MaxLength="6" sap:label="Payload JSON Version" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TaxSch" Type="Edm.String" Nullable="false" MaxLength="6" sap:label="Tax Schema" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Actflag" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Active" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityContainer Name="ZEINVOICE_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="Portal_detailsSet" EntityType="ZEINVOICE_SRV.Portal_details" sap:deletable="false" sap:pageable="false"
+				sap:content-version="1"/></EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZEINVOICE_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZEINVOICE_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

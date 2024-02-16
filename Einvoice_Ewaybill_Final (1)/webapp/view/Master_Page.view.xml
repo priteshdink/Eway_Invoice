@@ -1,0 +1,74 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.dink.Einvoice.controller.Master_Page"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Maintain E-Invoice Configuration" navButtonPress="onBack" showNavButton="true"  class="pagebackcolor" backgroundDesign="Transparent">
+				<content>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Portal Details(NIC)" press="pressportaldetails">
+						<TileContent>
+							<NumericContent id="portalDetails" icon="sap-icon://line-charts" withMargin="false"/>
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="User Access Details" subheader="As per NIC"
+						press="pressuseraccessdetails">
+						<TileContent>
+							<NumericContent id="useraccessdetails" icon="sap-icon://line-charts" withMargin="false"/>
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Portal URL" subheader="As per NIC" press="pressportalurl">
+						<TileContent>
+							<NumericContent id="portalurl" icon="sap-icon://line-charts" withMargin="false"/>
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Document Type" subheader="As per NIC"
+						press="pressdocumenttype">
+						<TileContent>
+							<NumericContent id="documenttype" icon="sap-icon://line-charts" withMargin="false"/>
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="State Code" subheader="Govt. to SAP" press="pressstatecode">
+						<TileContent>
+							<NumericContent id="statecode" icon="sap-icon://line-charts" withMargin="false"/>
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="UOM Code" subheader="Govt. to SAP" press="pressuomcode">
+						<TileContent>
+							<NumericContent id="uomcode" icon="sap-icon://line-charts" withMargin="false"/>
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Condition Type" subheader="Govt. to SAP"
+						press="pressconditiontype">
+						<TileContent>
+							<NumericContent id="conditiontype" icon="sap-icon://line-charts" withMargin="false"/>
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="E-Invoice Authorization" press="presseinvoiceautho">
+						<TileContent>
+							<NumericContent id="authorization" icon="sap-icon://line-charts" withMargin="false"/>
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="HSN Code Wise RATE Master" press="pressratemaster">
+						<TileContent>
+							<NumericContent id="hsncoderatemaster" icon="sap-icon://line-charts" withMargin="false"/>
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Transporter Details" press="pressTrasdetailsmaster">
+						<TileContent>
+							<NumericContent id="Transmaster" icon="sap-icon://line-charts" withMargin="false"/>
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="E-way Bill Distance" press="pressEwaybilldistancemaster">
+						<TileContent>
+							<NumericContent id="Ewaybilldistancemaster" icon="sap-icon://line-charts" withMargin="false"/>
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="E-way Bill Authorization" press="pressEwaybillauthmaster">
+						<TileContent>
+							<NumericContent id="Ewaybillauthmaster" icon="sap-icon://line-charts" withMargin="false"/>
+						</TileContent>
+					</GenericTile>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

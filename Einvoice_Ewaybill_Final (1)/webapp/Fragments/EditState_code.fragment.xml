@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" id="inputdialog">
+	<Dialog showHeader="false">
+		<Panel>
+			<headerToolbar>
+				<OverflowToolbar height="3rem" class="Panel_header">
+					<Title text="Edit State_code" class="labelselectrep"/>
+					<ToolbarSpacer/>
+					<Button icon="sap-icon://decline" press="onCancel1"></Button>
+				</OverflowToolbar>
+			</headerToolbar>
+			<f:SimpleForm id="SimpleFrmDisply3541s" editable="true" layout="ResponsiveGridLayout" title="" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+				labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+				singleContainerFullSize="false">
+				<f:content>
+					<Label text="Country"/>
+					<Input id="country1" editable="false"/>
+					<Label text="SAP Region"/>
+					<Input id="sapregion1" editable="false"/>
+					<Label text="Govt. Region"/>
+					<Input id="govtregion1"/>
+					<Label text="Active/Deactive"/>
+					<CheckBox id="activedeactivestc1"></CheckBox>
+				</f:content>
+			</f:SimpleForm>
+		</Panel>
+		<buttons>
+			<Button text="Update" type="Emphasized" press="oncreate1"/>
+			<Button text="Clear" type="Emphasized" press="onclear1"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

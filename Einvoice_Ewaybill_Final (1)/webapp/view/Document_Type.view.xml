@@ -1,0 +1,130 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:u="sap.ui.unified" xmlns:m="sap.m"
+	controllerName="com.dink.Einvoice.controller.Document_Type" xmlns:html="http://www.w3.org/1999/xhtml">
+	<m:Page showNavButton="true" navButtonPress="onBack" backgroundDesign="Transparent" class="pagebackcolor">
+		<m:content>
+			<m:Panel>
+				<Table id="document_type" selectionMode="None" rows="{/DocTypeSet}" visibleRowCount="7" filter="filterPrice">
+					<extension>
+						<m:OverflowToolbar>
+							<m:Title id="title" text="Mapping for GOV.Doc Type with SAP Doc Type"/>
+							<m:ToolbarSpacer/>
+							<m:Button type="Emphasized" text="ADD" press="onAdd"/>
+							<!--	<m:Button type="Emphasized" text="EDit" press="onEdit"/>-->
+						</m:OverflowToolbar>
+					</extension>
+					<columns>
+						<Column filterProperty="Name" width="8rem">
+							<m:Label text="Govt. Doc Type"/>
+							<template>
+								<m:Text text="{GovDtyp}"/>
+								<!--	<m:Select selectedKey="{GovDtyp}">
+								<core:Item key="" text=""/>
+								<core:Item key="CRN" text="Credit Note"/>
+								<core:Item key="DBN" text="Debit Note"/>
+								<core:Item key="INV" text="Invoice"/>
+								<core:Item key="BIL" text="Bill of Supply"/>
+								<core:Item key="BOE" text="Bill of Entry"/>
+								<core:Item key="CHL" text="Delivery Challan"/>
+								<core:Item key="OTH" text="Others"/>
+							</m:Select>-->
+							</template>
+						</Column>
+						<Column filterProperty="Category" defaultFilterOperator="StartsWith" width="8rem">
+							<m:Label text="SAP Doc Type"/>
+							<template>
+								<m:Text text="{SapDtyp}"/>
+							</template>
+						</Column>
+						<Column width="8rem">
+							<m:Label text="Type of Supply"/>
+							<template>
+								<m:Text text="{SupTyp}"/>
+								<!--<m:Select selectedKey="{SupTyp}">
+								<core:Item key="" text=""/>
+								<core:Item key="B2B" text="Business to Business"/>
+								<core:Item key="EXPWP" text="Export with Payment"/>
+								<core:Item key="EXPWOP" text="Export without Payment"/>
+								<core:Item key="SEZWP" text="SEZ with payment"/>
+								<core:Item key="SEZWOP" text="SEZ without payment"/>
+								<core:Item key="DEXP" text="Deemed Export"/>
+								<core:Item key="DEXP" text="Deemed Export"/>
+							</m:Select>-->
+							</template>
+						</Column>
+						<Column id="availability" filterProperty="Available" showFilterMenuEntry="false" defaultFilterOperator="EQ"
+							filterType="sap.ui.model.type.Boolean" width="8rem">
+							<m:Label text="SAP Module"/>
+							<template>
+								<m:Text text="{Zmodule}"/>
+								<!--<m:Select selectedKey="{Zmodule}">
+								<core:Item key="SD" text="Sales &amp; Distribution"/>
+								<core:Item key="FI" text="Finance"/>
+							</m:Select>-->
+							</template>
+						</Column>
+						<Column id="price" filterProperty="Price" width="8rem" >
+							<m:Label text="Service or Not"/>
+							<template>
+								<m:Text text="{Service}"/>
+								<!--	<m:Select selectedKey="{Service}">
+								<core:Item key="" text=""/>
+								<core:Item key="Y" text="Yes"/>
+								<core:Item key="N" text="No"/>
+							</m:Select>-->
+							</template>
+						</Column>
+						<Column width="8rem">
+							<m:Label text="Tax Liability"/>
+							<template>
+								<m:Text text="{Regrev}"/>
+								<!--	<m:Select selectedKey="{Regrev}">
+								<core:Item key="" text=""/>
+								<core:Item key="Y" text="Yes"/>
+								<core:Item key="N" text="No"/>
+							</m:Select>-->
+							</template>
+						</Column>
+						<Column id="Portal_Password" filterProperty="Price" width="8rem">
+							<m:Label text="IGST on Intra State" wrapping="true"/>
+							<template>
+								<m:Text text="{Igstonintra}"/>
+								<!--	<m:Select selectedKey="{Igstonintra}">
+								<core:Item key="" text=""/>
+								<core:Item key="Y" text="Yes"/>
+								<core:Item key="N" text="No"/>
+							</m:Select>-->
+							</template>
+						</Column>
+						<Column width="8rem">
+							<m:Label text="E-Invoice Flag"/>
+							<template>
+								<m:CheckBox selected="{= ${PortalFlag} === 'X'}" editable="false" select="onchange"></m:CheckBox>
+							</template>
+						</Column>
+						<Column width="8rem">
+							<m:Label text="E-Way Bill Flag"/>
+							<template>
+								<m:CheckBox selected="{= ${EwayBill} === 'X'}" editable="false" select="onchange"></m:CheckBox>
+							</template>
+						</Column>
+						<Column width="8rem">
+							<m:Label text="Auto Flag"/>
+							<template>
+								<m:CheckBox selected="{= ${Vf01Flag} === 'X'}" editable="false" select="onchange"></m:CheckBox>
+							</template>
+						</Column>
+						<Column width="8rem">
+							<m:Label text="Edit/Delete"/>
+							<template>
+								<m:HBox>
+									<m:Button icon="sap-icon://edit" type="Transparent" press="onEdit"/>
+									<m:Button icon="sap-icon://delete" type="Transparent" press="deletedocumenttype"/>
+								</m:HBox>
+							</template>
+						</Column>
+					</columns>
+				</Table>
+			</m:Panel>
+		</m:content>
+	</m:Page>
+</mvc:View>

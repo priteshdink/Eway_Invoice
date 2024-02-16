@@ -1,0 +1,48 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:u="sap.ui.unified" xmlns:m="sap.m"
+	controllerName="com.dink.Einvoice.controller.Transporter_Details" xmlns:html="http://www.w3.org/1999/xhtml">
+	<m:Page showNavButton="true" navButtonPress="onBack" backgroundDesign="Transparent" class="pagebackcolor">
+		<m:content>
+			<m:Panel>
+				<Table id="transtable" selectionMode="None" rows="{/Transporter_detailsSet}" visibleRowCount="7" filter="filterPrice">
+					<extension>
+						<m:OverflowToolbar>
+							<m:Title id="title" text="Transporter Details"/>
+							<m:ToolbarSpacer/>
+							<m:Button type="Emphasized" text="ADD" press="onAdd"/>
+							<!--<m:Button type="Emphasized" text="EDIT" press="onEdit"/>-->
+						</m:OverflowToolbar>
+					</extension>
+					<columns>
+						<Column width="20rem">
+							<m:Label text="Transporter Id"/>
+							<template>
+								<m:Text text="{TransId}"/>
+							</template>
+						</Column>
+						<Column width="20rem">
+							<m:Label text="Transporter Name"/>
+							<template>
+								<m:Text text="{TransDesc}"/>
+							</template>
+						</Column>
+						<Column width="21rem">
+							<m:Label text="Active/Deactive"/>
+							<template>
+								<m:CheckBox selected="{= ${Active} === 'X'}" editable="false" select="onchange"></m:CheckBox>
+							</template>
+						</Column>
+						<Column width="22rem">
+							<m:Label text="Edit/Delete"/>
+							<template>
+								<m:HBox>
+									<m:Button icon="sap-icon://edit" type="Transparent" press="onEdit"/>
+									<m:Button icon="sap-icon://delete" type="Transparent" press="deleteUOMcode"/>
+								</m:HBox>
+							</template>
+						</Column>
+					</columns>
+				</Table>
+			</m:Panel>
+		</m:content>
+	</m:Page>
+</mvc:View>

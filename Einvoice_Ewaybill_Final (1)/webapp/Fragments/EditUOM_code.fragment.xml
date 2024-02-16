@@ -1,0 +1,29 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" id="inputdialog">
+	<Dialog showHeader="false">
+		<Panel>
+			<headerToolbar>
+				<OverflowToolbar height="3rem" class="Panel_header">
+					<Title text="Edit UOM Code" class="labelselectrep"/>
+					<ToolbarSpacer/>
+					<Button icon="sap-icon://decline" press="onCancel1"></Button>
+				</OverflowToolbar>
+			</headerToolbar>
+			<f:SimpleForm id="SimpleFormDilay35412" editable="true" layout="ResponsiveGridLayout" title="" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+				labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+				singleContainerFullSize="false">
+				<f:content>
+					<Label text="Govt. UOM"/>
+					<Input id="govtuom1" editable="false"/>
+					<Label text="SAP UOM"/>
+					<Input id="sapuom1" editable="false"/>
+					<Label text="Active/Deactive"/>
+					<CheckBox id="activedeactiveuom1"></CheckBox>
+				</f:content>
+			</f:SimpleForm>
+		</Panel>
+		<buttons>
+			<Button text="Update" type="Emphasized" press="oncreate1"/>
+			<Button text="Clear" type="Emphasized" press="onclear1"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

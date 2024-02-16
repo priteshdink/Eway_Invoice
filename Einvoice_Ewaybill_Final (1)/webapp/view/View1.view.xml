@@ -1,0 +1,27 @@
+<mvc:View controllerName="com.dink.Einvoice.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<App id="app">
+		<pages>
+			<Page id="page" title="GST Cockpit" backgroundDesign="Transparent" class="pagebackcolor">
+				<content>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Master" press="pressMaster">
+						<TileContent>
+							<NumericContent value="12" withMargin="false"/>
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="E-Invoice" press="press">
+						<TileContent >
+							<ImageContent src="images/Einvoice1.png" class="logo"/>
+							<!--	<NumericContent value=""  withMargin="false"/>-->
+						</TileContent>
+					</GenericTile>
+						<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="E-Way Bill" press="pressEwaybill">
+						<TileContent>
+							<ImageContent src="images/Gstlogo.png" class="logo"/>
+							<NumericContent value="" withMargin="false"/>
+						</TileContent>
+					</GenericTile>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

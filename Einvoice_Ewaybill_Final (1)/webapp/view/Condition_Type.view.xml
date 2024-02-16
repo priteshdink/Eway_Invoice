@@ -1,0 +1,62 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:u="sap.ui.unified" xmlns:m="sap.m"
+	controllerName="com.dink.Einvoice.controller.Condition_Type" xmlns:html="http://www.w3.org/1999/xhtml">
+	<m:Page showNavButton="true" navButtonPress="onBack" backgroundDesign="Transparent" class="pagebackcolor">
+		<m:content>
+			<m:Panel>
+				<Table id="conditiontypetable" selectionMode="None" rows="{/CondTypeSet}" visibleRowCount="7" filter="filterPrice">
+					<extension>
+						<m:OverflowToolbar>
+							<m:Title id="title" text="Mapping Condition SAP to Govt."/>
+							<m:ToolbarSpacer/>
+							<m:Button type="Emphasized" text="ADD" press="onAdd"/>
+							<!--	<m:Button type="Emphasized" text="EDIT" press="onEdit"/>-->
+						</m:OverflowToolbar>
+					</extension>
+					<columns>
+						<Column filterProperty="Name" width="20rem">
+							<m:Label text="Govt. Condition Type"/>
+							<template>
+								<m:Text text="{CondTyp}"/>
+							</template>
+						</Column>
+						<Column filterProperty="Category" defaultFilterOperator="StartsWith" width="21rem">
+							<m:Label text="SAP Condition Type"/>
+							<template>
+								<m:Text text="{GovtCondType}"/>
+								<!--<m:Select selectedKey="{GovtCondType}">
+								<core:Item key="CESAMT" text="CESS Amount / Rate"/>
+								<core:Item key="CGSTAMT" text="CGST Amount"/>
+								<core:Item key="DISCOUNT" text="Discount"/>
+								<core:Item key="IGSTAMT" text="IGST Amount"/>
+								<core:Item key="SGSTAMT" text="SGST Amount"/>
+								<core:Item key="STATECES" text="State CESS Amount / Rate"/>
+								<core:Item key="UNITPRICE" text="Basic Price"/>
+								<core:Item key="ROUNDOFF" text="Round off"/>
+								<core:Item key="CESNADL" text="Cess Non-Advol Amount"/>
+								<core:Item key="STATENA" text="State CESS Non Adval Amount"/>
+								<core:Item key="OTHNTAX" text="Other Non-Taxable Charges"/>
+								<core:Item key="OTHTAX" text="Other Taxable Charge"/>
+							</m:Select>-->
+							</template>
+						</Column>
+						<Column width="21rem">
+							<m:Label text="Active/Deactive"/>
+							<template>
+								<m:CheckBox selected="{= ${Actflag} === 'X'}" editable="false" select="onchange"></m:CheckBox>
+							</template>
+						</Column>
+						<Column width="21rem">
+							<m:Label text="Edit/Delete"/>
+							<template>
+								<m:HBox>
+									<m:Button icon="sap-icon://edit" type="Transparent" press="onEdit"/>
+									<m:Button icon="sap-icon://delete" type="Transparent" press="deleteconditiontype"/>
+								</m:HBox>
+							</template>
+						</Column>
+					</columns>
+				</Table>
+			</m:Panel>
+		</m:content>
+	</m:Page>
+</mvc:View>

@@ -1,0 +1,45 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Dialog class="fdialog" xmlns:f="sap.ui.layout.form" showHeader="false">
+		<content>
+			<Panel>
+				<headerToolbar>
+					<OverflowToolbar height="3rem" class="Panel_header">
+						<Title text="Edit Portal Details(NIC)" class="labelselectrep"/>
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://decline" press="onCancel1"></Button>
+					</OverflowToolbar>
+				</headerToolbar>
+				<f:SimpleForm id="SimpleFormDispl1ay3541" editable="true" layout="ResponsiveGridLayout" title="" labelSpanXL="3" labelSpanL="3"
+					labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+					columnsL="1" columnsM="1" singleContainerFullSize="false">
+					<f:content>
+						<Label text="SAP System ID" design="Bold" class="profilesapUiFormCLElement "></Label>
+						<Input id="sapsystemidport1" editable="false"/>
+						<Label text="Mode Of Process" design="Bold" class="profilesapUiFormCLElement"></Label>
+						<Select id="modeofprocess1" editable="false">
+							<core:Item text="EINV" key="EINV"/>
+							<core:Item text="EBILL" key="EBILL"/>
+							<core:Item text="GST" key="GST"/>
+						</Select>
+						<Label text="ASP User ID" design="Bold" class="profilesapUiFormCLElement"></Label>
+						<Input id="aspuserid1" editable="false"></Input>
+						<Label text="ASP Password" design="Bold" class="profilesapUiFormCLElement"></Label>
+						<Input id="asppass1" editable="false"></Input>
+						<Label text="portal Version" design="Bold" class="profilesapUiFormCLElement"></Label>
+						<Input id="portalversion1"></Input>
+						<Label text="Payload Json Version" design="Bold" class="profilesapUiFormCLElement"></Label>
+						<Input id="payload1"></Input>
+						<Label text="Tax Schema" design="Bold" class="profilesapUiFormCLElement"></Label>
+						<Input id="taxschema1"></Input>
+						<Label text="Active/Deactive" design="Bold" class="profilesapUiFormCLElement"></Label>
+						<CheckBox id="activedeactiveportdet1"/>
+					</f:content>
+				</f:SimpleForm>
+			</Panel>
+		</content>
+		<buttons>
+			<Button text="Update" class="btn btn-success Sub" type="Emphasized" press="oncreate1"/>
+			<Button text="Clear" class="btn btn-success Sub" type="Emphasized" press="onclear1"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>
